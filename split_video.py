@@ -5,11 +5,11 @@ import time
 from tqdm import tqdm
 
 #Set minimum frame diference parameter
-diff_thresh = 3.5
+diff_thresh = 0.9
 
 # Define the path to the directory
 main_dir = "VideoFrames/"
-video_path = "/Users/ilyapetrov/Desktop/Biz/Neuronflo/Software/Videos_Images/Tenneco_1st_batch/VID_5_goggle_ok_shoe_ok.mp4"
+video_path = "/Users/Family/Documents/NeuronFlo/Forklift.mp4"
 video_name = video_path.rsplit('/',1)[1]
 video_name = video_name.split(".")[0]
 output_path = main_dir + video_name + "/"
@@ -93,7 +93,7 @@ for frame_number in tqdm(range(total_frames)):
                 if frame_count % 2 == 1:  # save only odd numbered frames
                     save_cnt +=1
                     filename = f'frame_{save_cnt:04d}.jpg'
-                    frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+                    #frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
                     cv2.imwrite(output_path+filename, frame)
 
 
